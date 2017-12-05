@@ -96,14 +96,16 @@ public class Application extends javax.swing.JFrame {
         NamaPenerimaTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        AlamatPenerimaTextField = new javax.swing.JTextArea();
+        AlamatPenerimaTextArea = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         kotaTujuanPaket = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        noTelfPenerimaLabel = new javax.swing.JLabel();
         NoTelfonPenerima = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPrintHasil = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         ButtonHitung = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         KeluarButton = new javax.swing.JButton();
@@ -180,7 +182,7 @@ public class Application extends javax.swing.JFrame {
             }
         });
 
-        ExitButton.setText("Exit");
+        ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/Cancel-256.png"))); // NOI18N
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);
@@ -220,7 +222,6 @@ public class Application extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ExitButton)
                     .addComponent(jLabel8)
                     .addComponent(jLabel12)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -247,36 +248,42 @@ public class Application extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addGap(38, 38, 38)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TypePengirimanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(YaRadio)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TidakRadioButton))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(BeratPaketTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel13))
-                                .addComponent(kotaTujuanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jRadioButton3)
-                                        .addComponent(jRadioButton5))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jRadioButton4)
-                                        .addComponent(jRadioButton6)))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(YaRadio)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(TidakRadioButton))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(BeratPaketTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel13))
+                                        .addComponent(kotaTujuanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jRadioButton3)
+                                                .addComponent(jRadioButton5))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jRadioButton4)
+                                                .addComponent(jRadioButton6)))
+                                        .addComponent(TypePengirimanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 25, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(SubmitButton)
                                     .addGap(18, 18, 18)
-                                    .addComponent(HapusButton))))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                                    .addComponent(HapusButton)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(10, 10, 10))))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(NamaPengirimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -314,15 +321,16 @@ public class Application extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton5)
                     .addComponent(jRadioButton6))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SubmitButton)
-                    .addComponent(HapusButton)
-                    .addComponent(ExitButton))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SubmitButton)
+                        .addComponent(HapusButton))
+                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -340,9 +348,9 @@ public class Application extends javax.swing.JFrame {
 
         jLabel7.setText("Alamat Penerima");
 
-        AlamatPenerimaTextField.setColumns(20);
-        AlamatPenerimaTextField.setRows(5);
-        jScrollPane2.setViewportView(AlamatPenerimaTextField);
+        AlamatPenerimaTextArea.setColumns(20);
+        AlamatPenerimaTextArea.setRows(5);
+        jScrollPane2.setViewportView(AlamatPenerimaTextArea);
 
         jLabel9.setText("Kota");
 
@@ -352,7 +360,7 @@ public class Application extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("No.Telfon Penerima");
+        noTelfPenerimaLabel.setText("No.Telpon ");
 
         NoTelfonPenerima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,20 +372,36 @@ public class Application extends javax.swing.JFrame {
         jPrintHasil.setRows(5);
         jScrollPane3.setViewportView(jPrintHasil);
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/print.png"))); // NOI18N
+        jLabel10.setText("Print");
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/save.png"))); // NOI18N
+        jLabel15.setText("Save");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -424,7 +448,7 @@ public class Application extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addComponent(jLabel10)))
+                                    .addComponent(noTelfPenerimaLabel)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
                                 .addComponent(ButtonHitung)))
@@ -432,14 +456,15 @@ public class Application extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(88, 88, 88)
                                 .addComponent(deleteButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                                 .addComponent(KeluarButton)
                                 .addGap(25, 25, 25))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
+                                .addGap(16, 16, 16)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(NoTelfonPenerima, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
-                                    .addComponent(kotaTujuanPaket)))))
+                                    .addComponent(kotaTujuanPaket))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -455,14 +480,11 @@ public class Application extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(NoTelfonPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NoTelfonPenerima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noTelfPenerimaLabel))
+                .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(kotaTujuanPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -483,9 +505,8 @@ public class Application extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,7 +550,7 @@ public class Application extends javax.swing.JFrame {
             packages.setBeratPaket(Double.parseDouble(BeratPaketTextField.getText()));
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Masukan Data Dengan Benar !!");
+            JOptionPane.showMessageDialog(rootPane, "Data masih kosong");
         }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
@@ -577,7 +598,7 @@ public class Application extends javax.swing.JFrame {
                     + "\n Total Harga Yang Dibayar : " + totalCost
                     + "\n============================================================"
                     + "\n Nama Penerima : " + NamaPenerimaTextField.getText()
-                    + "\n Alamat Penerima : " + AlamatPenerimaTextField.getText()
+                    + "\n Alamat Penerima : " + AlamatPenerimaTextArea.getText()
                     + "\n No Telfon Penerima : " + NoTelfonPenerima.getText());
             System.out.println("Berat Paket: " + packages.getBeratPaket());
             System.out.println("Asuransi: " + packages.getAsuransi());
@@ -593,7 +614,7 @@ public class Application extends javax.swing.JFrame {
     }
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         NamaPenerimaTextField.setText(" ");
-        AlamatPenerimaTextField.setText(" ");
+        AlamatPenerimaTextArea.setText(" ");
         NoTelfonPenerima.setText(" ");
         kotaTujuanPaket.setText("");
         jPrintHasil.setText(" ");
@@ -665,7 +686,7 @@ public class Application extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea AlamatPenerimaTextField;
+    private javax.swing.JTextArea AlamatPenerimaTextArea;
     private javax.swing.JTextArea AlamatPengirimTextArea;
     private javax.swing.JTextField BeratPaketTextField;
     private javax.swing.JButton ButtonHitung;
@@ -689,6 +710,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -711,6 +733,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> kotaTujuanCombo;
     private javax.swing.JTextField kotaTujuanPaket;
+    private javax.swing.JLabel noTelfPenerimaLabel;
     // End of variables declaration//GEN-END:variables
 
 }
