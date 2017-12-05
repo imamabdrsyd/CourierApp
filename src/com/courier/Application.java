@@ -84,10 +84,9 @@ public class Application extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        cash = new javax.swing.JRadioButton();
+        debit = new javax.swing.JRadioButton();
+        credit = new javax.swing.JRadioButton();
         hargaBarangTextField = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -109,6 +108,7 @@ public class Application extends javax.swing.JFrame {
         ButtonHitung = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         KeluarButton = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -175,7 +175,7 @@ public class Application extends javax.swing.JFrame {
             }
         });
 
-        HapusButton.setText("Hapus");
+        HapusButton.setText("Cancel");
         HapusButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HapusButtonActionPerformed(evt);
@@ -193,26 +193,29 @@ public class Application extends javax.swing.JFrame {
 
         jLabel12.setText("Tipe Pembayaran");
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setText("Cash");
-
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setText("Debit");
-
-        buttonGroup2.add(jRadioButton5);
-        jRadioButton5.setText("Credit");
-
-        buttonGroup2.add(jRadioButton6);
-        jRadioButton6.setText("Ngutang yak");
-        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(cash);
+        cash.setText("Cash");
+        cash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton6ActionPerformed(evt);
+                cashActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(debit);
+        debit.setText("Debit");
+
+        buttonGroup2.add(credit);
+        credit.setText("Credit");
+        credit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creditActionPerformed(evt);
             }
         });
 
         jLabel13.setText("Kg");
 
-        jLabel14.setFont(new java.awt.Font("Space Age", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Buxton Sketch", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Cyber Courier Indonesia");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -260,13 +263,11 @@ public class Application extends javax.swing.JFrame {
                                             .addComponent(jLabel13))
                                         .addComponent(kotaTujuanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jRadioButton3)
-                                                .addComponent(jRadioButton5))
+                                            .addComponent(cash)
+                                            .addGap(24, 24, 24)
+                                            .addComponent(debit)
                                             .addGap(18, 18, 18)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jRadioButton4)
-                                                .addComponent(jRadioButton6)))
+                                            .addComponent(credit))
                                         .addComponent(TypePengirimanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 25, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -281,9 +282,9 @@ public class Application extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
+                .addContainerGap()
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(NamaPengirimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,13 +320,10 @@ public class Application extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
-                .addGap(18, 18, 18)
+                    .addComponent(cash)
+                    .addComponent(debit)
+                    .addComponent(credit))
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(SubmitButton)
@@ -401,7 +399,7 @@ public class Application extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -500,18 +498,28 @@ public class Application extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Penerima", jPanel2);
 
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/add_icon.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
@@ -546,7 +554,7 @@ public class Application extends javax.swing.JFrame {
         try {
             transaksi.setBerat(Double.parseDouble(BeratPaketTextField.getText()));
             transaksi.setBerat(Integer.parseInt(hargaBarangTextField.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Data Sukes Silakan Pindah Ke Tab Data Penerima");
+            JOptionPane.showMessageDialog(rootPane, "Data Sukses Silahkan Pindah Ke Tab Data Penerima");
             packages.setBeratPaket(Double.parseDouble(BeratPaketTextField.getText()));
 
         } catch (Exception e) {
@@ -646,9 +654,13 @@ public class Application extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_YaRadioActionPerformed
 
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+    private void creditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
+    }//GEN-LAST:event_creditActionPerformed
+
+    private void cashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cashActionPerformed
 
     /**
      * @param args the command line arguments
@@ -702,6 +714,9 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JRadioButton YaRadio;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton cash;
+    private javax.swing.JRadioButton credit;
+    private javax.swing.JRadioButton debit;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField hargaBarangTextField;
     private javax.swing.JLabel jLabel1;
@@ -711,6 +726,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -723,10 +739,6 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextArea jPrintHasil;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
