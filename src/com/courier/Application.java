@@ -50,6 +50,7 @@ public class Application extends javax.swing.JFrame {
         packages = new DeliveryPackage();
         costDAO = new CostDAO();
         initComponents();
+//        dateNowLabel.setText(getDateNow());
     }
 
     /**
@@ -109,6 +110,7 @@ public class Application extends javax.swing.JFrame {
         deleteButton = new javax.swing.JButton();
         KeluarButton = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        dateNowLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -500,6 +502,8 @@ public class Application extends javax.swing.JFrame {
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/add_icon.png"))); // NOI18N
 
+        dateNowLabel.setText("DD/MM/YYYY");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -512,13 +516,17 @@ public class Application extends javax.swing.JFrame {
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel16)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dateNowLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dateNowLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
@@ -558,7 +566,7 @@ public class Application extends javax.swing.JFrame {
             packages.setBeratPaket(Double.parseDouble(BeratPaketTextField.getText()));
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Data masih kosong");
+            JOptionPane.showMessageDialog(rootPane, "Oops! Data masih kosong :D");
         }
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
@@ -716,6 +724,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton cash;
     private javax.swing.JRadioButton credit;
+    private javax.swing.JLabel dateNowLabel;
     private javax.swing.JRadioButton debit;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField hargaBarangTextField;
